@@ -1,0 +1,45 @@
+<% layout('layout') -%> <% if (!currentUser) { %>
+<h1>Hello from Home Page</h1>
+<% } else {%>
+<h1>
+  Welcome <%=
+  `${currentUser.username[0].toUpperCase()}${currentUser.username.substring(1)}`
+  %>
+</h1>
+<% }%> <% if (messages) { %>
+<div class="container">
+  <% messages.forEach(message => { %>
+  <div class="media text-muted pt-3 bg-light p-3 mb-3">
+    <img
+    src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBLE2R35SV62Enw03QHS5AY-LUr6HOhmHvrA&usqp=CAU"
+    alt="" class="mr-2 rounded" width="64" height="64" />
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <% if (!currentUser) { %>
+      <strong class="d-block text-gray-dark">@anonymous </strong>
+      <% } else if(!currentUser.is_member) {%>
+      <strong class="d-block text-gray-dark">@anonymous </strong>
+      <% }else{%>
+      <strong class="d-block text-gray-dark"
+        >@<%= message.author.username %>
+      </strong>
+      <% }%> <%= message.message %>
+    </p>
+    <% if (currentUser && currentUser.is_admin) { %>
+    <a href="<%=message.url%>/delete">
+      <button
+        class="btn btn-danger float-end"
+        style="margin-left: 1rem; margin-top: 0.5rem"
+      >
+        Delete
+      </button></a
+    >
+    <% } %>
+
+    <p class="text-end p-0 mr-2">
+      Created @ <%=moment( message.created_at ).format('LLL') %>
+    </p>
+  </div>
+
+  <% }) %>
+</div>
+<% } %>

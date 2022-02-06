@@ -1,0 +1,76 @@
+<% layout('layout') -%>
+
+<section id="cover" class="min-vh-100">
+  <div id="cover-caption">
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4"
+        >
+          <h1 class="display-4 py-2 text-truncate">Register To Face Club</h1>
+          <div class="px-2">
+            <form method="POST" action="">
+              <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="first_name"
+                  placeholder="First Name"
+                  name="first_name"
+                />
+                <label for="last_name">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="last_name"
+                  placeholder="Last Name"
+                  name="last_name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="Enter Username"
+                  name="username"
+                />
+                <label for="email">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                  name="email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Password"
+                  name="password"
+                />
+                <label for="confirm_password">Confirm Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirm_password"
+                  placeholder="Confirm Password"
+                  name="confirm_password"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
